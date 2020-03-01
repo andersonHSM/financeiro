@@ -1,0 +1,17 @@
+:host {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.card {
+  margin: auto;
+  // padding: 25px;
+}
+
+mat-icon:hover {
+  cursor: pointer;
+}
