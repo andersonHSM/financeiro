@@ -1,13 +1,12 @@
 import { NgModule } from "@angular/core";
-import { AuthModule } from "./auth/auth.module";
 import { FeaturesRoutingModule } from "./features-routing.module";
-import { CommonModule } from "@angular/common";
-import { DashModule } from "../components/dash/dash.module";
+import { SharedModule } from "../shared/shared.module";
 
-const modules = [AuthModule, FeaturesRoutingModule, CommonModule, DashModule];
+const modules = [FeaturesRoutingModule, SharedModule];
 
 @NgModule({
   imports: [modules],
-  exports: [modules]
+  exports: [modules],
+  declarations: []
 })
 export class FeaturesModule {}

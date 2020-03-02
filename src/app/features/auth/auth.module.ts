@@ -7,6 +7,8 @@ import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
 import { ResetPasswordComponent } from "./reset-password/reset-password.component";
 import { MaterialModule } from "../../material/material.module";
+import { SharedModule } from "src/app/shared/shared.module";
+import { AuthRoutingModule } from "./auth-routing.module";
 
 @NgModule({
   declarations: [
@@ -15,6 +17,6 @@ import { MaterialModule } from "../../material/material.module";
     RegisterComponent,
     ResetPasswordComponent
   ],
-  imports: [RouterModule, MaterialModule, CommonModule]
+  imports: [AuthRoutingModule, SharedModule]
 })
 export class AuthModule {}

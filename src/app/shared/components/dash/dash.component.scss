@@ -1,6 +1,19 @@
+$main-backgound: #fefefe;
+mat-toolbar {
+  background-color: $main-backgound;
+  border-bottom: 1px solid rgba(215, 215, 215, 0.3);
+}
+
+#toolbar-actions {
+  margin-left: auto;
+}
+
+.mat-drawer-side {
+  border-right: 1px solid #1565c0;
+}
 .sidenav {
   background: #1565c0;
-  min-width: 200px;
+  min-width: 250px;
   // display: flex;
   //   minheight: 100%;
 }
@@ -13,7 +26,7 @@
 }
 #sidenav-closer {
   display: block;
-  color: white;
+  // color: white;
 }
 
 .sidenav-container {
@@ -29,6 +42,7 @@
   height: 100%;
   overflow-y: auto;
   overflow-x: auto;
+  background-color: $main-backgound;
 }
 
 :host {

@@ -5,7 +5,7 @@
     </mat-sidenav>
     <mat-sidenav-content>
         <div class="main-content">
-            <mat-toolbar color="primary" style="height: 64px;">
+            <mat-toolbar style="height: 64px;">
                 <mat-toolbar-row>
                     <span id="sidenav-closer">
                         <button mat-icon-button (click)="sidenavOpened = !sidenavOpened">
@@ -15,12 +15,15 @@
                                 matTooltipPosition="below">menu</mat-icon>
                         </button>
                     </span>
-                    <span [routerLink]="['']">
-                        <button mat-button>Financeiro</button>
+                    <span>
+                        <button matTooltip="Início" [routerLink]="['']" mat-button>Financeiro</button>
+                    </span>
+                    <span id="toolbar-actions">
+                        <app-toolbar-actions></app-toolbar-actions>
                     </span>
                 </mat-toolbar-row>
             </mat-toolbar>
-            <ng-content #outlet></ng-content>
+            <ng-content></ng-content>
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>

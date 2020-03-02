@@ -1,5 +1,4 @@
 import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
@@ -9,16 +8,12 @@ const routes: Routes = [
       {
         path: "",
         loadChildren: () =>
-          import("../components/dash/dash-routing.module").then(
-            dash => dash.DashRoutingModule
-          )
+          import("./panel/panel.module").then(panel => panel.PanelModule)
       },
       {
         path: "autenticacao",
         loadChildren: () =>
-          import("./auth/auth-routing.module").then(
-            auth => auth.AuthRoutingModule
-          )
+          import("./auth/auth.module").then(auth => auth.AuthModule)
       }
     ]
   }
