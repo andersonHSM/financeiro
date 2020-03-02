@@ -11,11 +11,11 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$financeiro-primary: mat-palette($mat-indigo);
-$financeiro-accent: mat-palette($mat-pink, A200, A100, A400);
+$financeiro-primary: mat-palette($mat-blue, 800);
+$financeiro-accent: mat-palette($mat-deep-purple, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$financeiro-warn: mat-palette($mat-red);
+$financeiro-warn: mat-palette($mat-red, A700);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $financeiro-theme: mat-light-theme(
@@ -41,14 +41,14 @@ body {
 }
 
 // // @import "variables";
-// @import "~bootstrap/scss/functions";
-// @import "~bootstrap/scss/variables";
-// @import "~bootstrap/scss/mixins";
-// @import "~bootstrap/scss/reboot";
-// @import "~bootstrap/scss/grid";
-// @import "~bootstrap/scss/utilities"; // add css utilities
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/utilities"; // add css utilities
 // // @import "reset";
-@import "~bootstrap/dist/css/bootstrap.css";
+// @import "~bootstrap/dist/css/bootstrap.css";
 
 a {
   text-decoration: none !important;
@@ -56,4 +56,8 @@ a {
 
 .card-title {
   text-align: center;
+}
+
+button {
+  outline: none !important;
 }

@@ -7,6 +7,13 @@ const routes: Routes = [
     path: "",
     children: [
       {
+        path: "",
+        loadChildren: () =>
+          import("../components/dash/dash-routing.module").then(
+            dash => dash.DashRoutingModule
+          )
+      },
+      {
         path: "autenticacao",
         loadChildren: () =>
           import("./auth/auth-routing.module").then(
