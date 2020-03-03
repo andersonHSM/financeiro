@@ -4,25 +4,138 @@
         </div>
     </mat-sidenav>
     <mat-sidenav-content>
+        <mat-toolbar style="height: 64px;">
+            <mat-toolbar-row>
+                <span id="sidenav-closer">
+                    <button mat-icon-button (click)="sidenavOpened = !sidenavOpened">
+                        <mat-icon *ngIf="sidenavOpened" matTooltip="Ocultar Menu Lateral" matTooltipPosition="below">
+                            menu_open</mat-icon>
+                        <mat-icon *ngIf="!sidenavOpened" matTooltip="Mostrar Menu Lateral" matTooltipPosition="below">
+                            menu</mat-icon>
+                    </button>
+                </span>
+                <span>
+                    <button matTooltip="Início" [routerLink]="['']" mat-button>Financeiro</button>
+                </span>
+                <span id="toolbar-actions">
+                    <app-toolbar-actions></app-toolbar-actions>
+                </span>
+            </mat-toolbar-row>
+        </mat-toolbar>
         <div class="main-content">
-            <mat-toolbar style="height: 64px;">
-                <mat-toolbar-row>
-                    <span id="sidenav-closer">
-                        <button mat-icon-button (click)="sidenavOpened = !sidenavOpened">
-                            <mat-icon *ngIf="sidenavOpened" matTooltip="Ocultar Menu Lateral"
-                                matTooltipPosition="below">menu_open</mat-icon>
-                            <mat-icon *ngIf="!sidenavOpened" matTooltip="Mostrar Menu Lateral"
-                                matTooltipPosition="below">menu</mat-icon>
-                        </button>
-                    </span>
-                    <span>
-                        <button matTooltip="Início" [routerLink]="['']" mat-button>Financeiro</button>
-                    </span>
-                    <span id="toolbar-actions">
-                        <app-toolbar-actions></app-toolbar-actions>
-                    </span>
-                </mat-toolbar-row>
-            </mat-toolbar>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Main content<br>
+            Oi
             <ng-content></ng-content>
         </div>
     </mat-sidenav-content>
