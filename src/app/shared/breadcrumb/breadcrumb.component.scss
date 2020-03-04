@@ -1,0 +1,20 @@
+.breadcrumb {
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row;
+}
+
+.breadcrumb button {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: #1565c0;
+}
+.breadcrumb button:disabled {
+  color: #6f7070 !important;
+  cursor: auto;
+}
+.breadcrumb span:not(disabled) {
+  color: #1565c0 !important;
+}

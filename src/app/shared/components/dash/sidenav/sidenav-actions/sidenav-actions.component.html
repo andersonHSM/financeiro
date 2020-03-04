@@ -1,0 +1,34 @@
+<ng-container *ngIf="opened">
+    <div class="actions-lg">
+        <button (click)="toggleSidenav()">
+            <mat-icon *ngIf="dashState">
+                menu_open</mat-icon>
+            <span>Fechar menu</span>
+        </button>
+        <a [routerLink]="['/home']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+            <mat-icon>home</mat-icon>
+            <span>Início</span>
+        </a>
+        <a [routerLink]="['/accounts']" routerLinkActive="active">
+            <mat-icon>account_balance
+            </mat-icon>
+            <span>Suas contas</span>
+        </a>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="!opened">
+    <div class="actions-sm">
+        <button (click)="toggleSidenav()" matTooltipPosition="after" matTooltip="Abrir menu">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <a matTooltip="Início" matTooltipPosition="after" [routerLink]="['/home']" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}">
+            <mat-icon>home</mat-icon>
+        </a>
+        <a matTooltip=" Suas contas" matTooltipPosition="after" [routerLink]="['/accounts']" routerLinkActive="active">
+            <mat-icon>account_balance
+            </mat-icon>
+        </a>
+    </div>
+</ng-container>

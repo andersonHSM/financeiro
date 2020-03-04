@@ -1,0 +1,62 @@
+:host {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.actions-lg,
+.actions-sm {
+  margin-top: 5px;
+  font-size: 1rem;
+  display: flex;
+  flex-flow: column;
+  background-color: transparent;
+  width: 100%;
+  height: auto;
+}
+
+.actions-lg a,
+.actions-lg button,
+.actions-sm a,
+.actions-sm button {
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+  color: white;
+  padding: 15px;
+  transition: padding 0.1s ease-in;
+}
+
+.actions-sm a,
+.actions-sm button,
+.actions-lg button {
+  padding: 15px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+.actions-lg a span,
+.actions-lg button span {
+  font-size: 15px;
+  display: block;
+}
+mat-icon {
+  transition: all 0.2s ease-in;
+}
+.actions-lg mat-icon {
+  margin-right: 5px;
+  line-height: 0.95;
+}
+.actions-sm mat-icon {
+  line-height: 0.95;
+}
+
+.actions-lg a:hover/* ,
+.actions-lg button:hover */ {
+  padding-left: 25px;
+}
+
+.active {
+  background-color: #065aba !important;
+}

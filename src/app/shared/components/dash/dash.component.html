@@ -1,142 +1,97 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav mode="side" [opened]="sidenavOpened" class="sidenav">
+    <mat-sidenav mode="side" opened=true id="sidenav">
         <div class="sidenav-actions">
+            <app-sidenav-actions [opened]="sidenavOpened"></app-sidenav-actions>
         </div>
     </mat-sidenav>
-    <mat-sidenav-content>
+    <mat-sidenav-content id="sidenav-content">
         <mat-toolbar style="height: 64px;">
             <mat-toolbar-row>
-                <span id="sidenav-closer">
-                    <button mat-icon-button (click)="sidenavOpened = !sidenavOpened">
-                        <mat-icon *ngIf="sidenavOpened" matTooltip="Ocultar Menu Lateral" matTooltipPosition="below">
-                            menu_open</mat-icon>
-                        <mat-icon *ngIf="!sidenavOpened" matTooltip="Mostrar Menu Lateral" matTooltipPosition="below">
-                            menu</mat-icon>
-                    </button>
-                </span>
-                <span>
+                <!-- <span>
                     <button matTooltip="Início" [routerLink]="['']" mat-button>Financeiro</button>
-                </span>
+                </span> -->
+                <app-breadcrumb></app-breadcrumb>
                 <span id="toolbar-actions">
                     <app-toolbar-actions></app-toolbar-actions>
                 </span>
             </mat-toolbar-row>
         </mat-toolbar>
         <div class="main-content">
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Main content<br>
-            Oi
-            <ng-content></ng-content>
+            <ng-content></ng-content> <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
+            content <br>
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>

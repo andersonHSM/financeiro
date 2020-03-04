@@ -1,4 +1,4 @@
-.bg {
+:host {
   background: linear-gradient(
     270deg,
     rgba(66, 165, 245, 1) 0%,
@@ -9,4 +9,12 @@
   width: 100%;
   height: 100%;
   overflow-y: auto;
+  display: flex;
+}
+
+.container {
+  margin: auto;
+  position: relative;
+  height: fit-content;
+  padding: 25px;
 }

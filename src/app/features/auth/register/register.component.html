@@ -1,51 +1,47 @@
-<mat-card class="card col-12 col-md-6">
+<mat-card class="card col-12 col-md-6 mx-auto">
     <h2 class="card-title mb-2">Cadastro</h2>
     <mat-divider></mat-divider>
     <form class="mt-3">
-        <div class="row">
-            <mat-form-field appearance="outline" class="col-12">
-                <mat-label>Nome</mat-label>
-                <input type="text" matInput autocomplete="off">
-            </mat-form-field>
-            <mat-form-field appearance="outline" class="col-12">
-                <mat-label>Sobrenome</mat-label>
-                <input type="text" matInput autocomplete="off">
-            </mat-form-field>
-            <mat-form-field appearance="outline" class="col-12">
-                <mat-label>E-mail</mat-label>
-                <input type="text" matInput autocomplete="off">
-            </mat-form-field>
-        </div>
-        <div class="row">
-            <mat-form-field appearance="outline" class="col-12">
-                <mat-label>Usuário</mat-label>
-                <input type="text" matInput autocomplete="off">
-            </mat-form-field>
-            <mat-form-field appearance="outline" class="col-12">
-                <mat-label>Senha</mat-label>
-                <input [type]="hidePassword ? 'password' : 'text'" matInput autocomplete=" off">
-                <mat-icon matTooltip="Mostrar Senha" *ngIf="hidePassword" (click)="togglePasswordVisibilty()" matSuffix>
-                    visibility</mat-icon>
-                <mat-icon matTooltip="Ocultar Senha" *ngIf="!hidePassword" (click)="togglePasswordVisibilty()"
-                    matSuffix>visibility_off</mat-icon>
-            </mat-form-field>
-            <mat-form-field appearance="outline" class="col-12">
-                <mat-label>Confirmar Senha</mat-label>
-                <input [type]="hidePasswordConfirm ? 'password' : 'text'" matInput autocomplete="off">
-                <mat-icon matTooltip="Mostrar Senha" *ngIf="hidePasswordConfirm"
-                    (click)="toggleConfirmPasswordVisibilty()" matSuffix>visibility
-                </mat-icon>
-                <mat-icon matTooltip="Ocultar Senha" *ngIf="!hidePasswordConfirm"
-                    (click)="toggleConfirmPasswordVisibilty()" matSuffix>
-                    visibility_off
-                </mat-icon>
-            </mat-form-field>
-        </div>
+        <mat-form-field appearance="outline" class="col-12">
+            <mat-label>Nome</mat-label>
+            <input type="text" matInput autocomplete="off">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="col-12">
+            <mat-label>Sobrenome</mat-label>
+            <input type="text" matInput autocomplete="off">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="col-12">
+            <mat-label>E-mail</mat-label>
+            <input type="text" matInput autocomplete="off">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="col-12">
+            <mat-label>Usuário</mat-label>
+            <input type="text" matInput autocomplete="off">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="col-12">
+            <mat-label>Senha</mat-label>
+            <input [type]="hidePassword ? 'password' : 'text'" matInput autocomplete=" off">
+            <mat-icon matTooltip="Mostrar Senha" *ngIf="hidePassword" (click)="togglePasswordVisibilty()" matSuffix>
+                visibility</mat-icon>
+            <mat-icon matTooltip="Ocultar Senha" *ngIf="!hidePassword" (click)="togglePasswordVisibilty()" matSuffix>
+                visibility_off</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="col-12">
+            <mat-label>Confirmar Senha</mat-label>
+            <input [type]="hidePasswordConfirm ? 'password' : 'text'" matInput autocomplete="off">
+            <mat-icon matTooltip="Mostrar Senha" *ngIf="hidePasswordConfirm" (click)="toggleConfirmPasswordVisibilty()"
+                matSuffix>visibility
+            </mat-icon>
+            <mat-icon matTooltip="Ocultar Senha" *ngIf="!hidePasswordConfirm" (click)="toggleConfirmPasswordVisibilty()"
+                matSuffix>
+                visibility_off
+            </mat-icon>
+        </mat-form-field>
     </form>
-    <div class="col-12 col-md-4 d-flex flex-column mx-auto">
-        <button mat-raised-button color="primary" class="col-12">Cadastrar</button>
+    <div class="col-12  d-flex flex-column mx-auto">
+        <button mat-raised-button color="primary" class="col-4 mx-auto">Cadastrar</button>
         <span class="mt-2" style="text-align: center;">
-            <a [routerLink]="['../login']">Já tem uma conta? <br> Fazer Login</a>
+            <a [routerLink]="['../login']">Já tem uma conta? Fazer Login</a>
         </span>
     </div>
 </mat-card>
