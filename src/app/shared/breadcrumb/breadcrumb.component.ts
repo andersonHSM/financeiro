@@ -53,11 +53,11 @@ export class BreadcrumbComponent implements OnInit {
         this.breadCrumbs.push(level.data as Breadcrumb);
       }
     });
-    console.log(
-      this.breadCrumbs.filter((breadcrum, i, array) => {
-        return array.indexOf(breadcrum) === i;
-      })
-    );
+    // console.log(
+    //   this.breadCrumbs.filter((breadcrum, i, array) => {
+    //     return array.indexOf(breadcrum) === i;
+    //   })
+    // );
   }
 
   /* getBreadcrumbsRecursively() {
