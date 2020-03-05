@@ -6,7 +6,7 @@ const routes: Routes = [
     path: "",
     children: [
       {
-        path: "",
+        path: "panel",
         loadChildren: () =>
           import("./panel/panel.module").then(panel => panel.PanelModule)
       },
