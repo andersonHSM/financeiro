@@ -1,8 +1,7 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { DashService } from "src/app/services/dash.service";
 import { Subject } from "rxjs";
-import { tap, takeUntil, map } from "rxjs/operators";
-import { MatSidenav } from "@angular/material/sidenav";
+import { tap, takeUntil } from "rxjs/operators";
 import {
   Router,
   ActivatedRoute,
@@ -30,8 +29,7 @@ export class DashComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly dashService: DashService,
-    private readonly router: Router,
-    private readonly activatedRoute: ActivatedRoute
+    private readonly router: Router
   ) {}
 
   ngOnInit(): void {
