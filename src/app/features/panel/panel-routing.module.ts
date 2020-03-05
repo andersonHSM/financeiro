@@ -15,31 +15,17 @@ const routes: Routes = [
       icon: "home"
     },
     children: [
-      { path: "", redirectTo: "/home", pathMatch: "full" },
+      { path: "", redirectTo: "index", pathMatch: "full" },
       {
-        path: "home",
+        path: "index",
         component: HomeComponent
       },
       {
         path: "accounts",
-        component: AccountsComponent,
-        data: {
-          breadCrumb: "Contas",
-          path: "/accounts",
-          icon: "account_balance"
-        },
-        children: [
-          { path: "", redirectTo: "view" },
-          {
-            path: "view",
-            component: AccountsViewComponent,
-            data: {
-              breadCrumb: "Visualizar",
-              path: "/accounts/view",
-              icon: "visibility"
-            }
-          }
-        ]
+        loadChildren: () =>
+          import("./accounts/accounts.module").then(
+            accounts => accounts.AccountsModule
+          )
       }
     ]
   }

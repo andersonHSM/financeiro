@@ -5,11 +5,11 @@
                 menu_open</mat-icon>
             <span>Fechar menu</span>
         </button>
-        <a [routerLink]="['/home']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <a [routerLink]="['/panel/index']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
             <mat-icon>home</mat-icon>
             <span>Início</span>
         </a>
-        <a [routerLink]="['/accounts']" routerLinkActive="active">
+        <a [routerLink]="['/panel/accounts']" routerLinkActive="active">
             <mat-icon>account_balance
             </mat-icon>
             <span>Suas contas</span>
@@ -22,11 +22,12 @@
         <button (click)="toggleSidenav()" matTooltipPosition="after" matTooltip="Abrir menu">
             <mat-icon>menu</mat-icon>
         </button>
-        <a matTooltip="Início" matTooltipPosition="after" [routerLink]="['/home']" routerLinkActive="active"
+        <a matTooltip="Início" matTooltipPosition="after" [routerLink]="['/panel/index']" routerLinkActive="active"
             [routerLinkActiveOptions]="{exact:true}">
             <mat-icon>home</mat-icon>
         </a>
-        <a matTooltip=" Suas contas" matTooltipPosition="after" [routerLink]="['/accounts']" routerLinkActive="active">
+        <a matTooltip=" Suas contas" matTooltipPosition="after" [routerLink]="['/panel/accounts']"
+            routerLinkActive="active">
             <mat-icon>account_balance
             </mat-icon>
         </a>
