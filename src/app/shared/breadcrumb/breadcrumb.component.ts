@@ -53,21 +53,5 @@ export class BreadcrumbComponent implements OnInit {
         this.breadCrumbs.push(level.data as Breadcrumb);
       }
     });
-    console.log(
-      this.breadCrumbs.filter((breadcrum, i, array) => {
-        return array.indexOf(breadcrum) === i;
-      })
-    );
   }
-
-  /* getBreadcrumbsRecursively() {
-    this.snapshotFromRoot = eval(
-      `this.activatedRoute.snapshot.${this.levels}.pathFromRoot`
-    );
-    this.levels = this.levels + ".firstChild";
-    if (eval(`this.activatedRoute.snapshot.${this.levels}`) === null) {
-      return;
-    }
-    this.getBreadcrumbsRecursively();
-  } */
 }

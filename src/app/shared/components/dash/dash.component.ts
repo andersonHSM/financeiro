@@ -2,8 +2,13 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 import { DashService } from "src/app/services/dash.service";
 import { Subject } from "rxjs";
 import { tap, takeUntil } from "rxjs/operators";
-import { MatSidenav } from "@angular/material/sidenav";
-import { Router, ActivatedRoute } from "@angular/router";
+import {
+  Router,
+  ActivatedRoute,
+  NavigationEnd,
+  NavigationStart,
+  NavigationError
+} from "@angular/router";
 
 @Component({
   selector: "app-dash",
@@ -24,14 +29,47 @@ export class DashComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly dashService: DashService,
-    private readonly router: Router,
-    private readonly activatedRoute: ActivatedRoute
+    private readonly router: Router
   ) {}
 
   ngOnInit(): void {
-    this.router.events();
     this.sidenav = document.getElementById("sidenav");
     this.sidenavContent = document.getElementById("sidenav-content");
+    /**
+     * Variável que armazena a url inicial
+     * para verificar se o usuário deve ser redirecionado
+     * ao topo da página na mudança de rota.
+     */
+    let urlInicio: string;
+    this.router.events
+      .pipe(
+        tap(event => {
+          if (event instanceof NavigationStart) {
+            urlInicio = window.location.href;
+          } else if (
+            event instanceof NavigationEnd ||
+            event instanceof NavigationError
+          ) {
+            /**
+             * Variável que armazena a url final
+             * para verificar se o usuário deve ser redirecionado
+             * ao topo da página na mudança de rota.
+             */
+            const urlFim = window.location.href;
+            if (urlInicio !== urlFim) {
+              const scrollToOptions: ScrollToOptions = {
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+              };
+              // this.sidenavContent.scrollTo(0, 0);
+              this.sidenavContent.scrollTo(scrollToOptions);
+            }
+          }
+        })
+      )
+      .subscribe();
+
     this.dashService
       .getDashState()
       .pipe(takeUntil(this.destroySubscriptions$))
