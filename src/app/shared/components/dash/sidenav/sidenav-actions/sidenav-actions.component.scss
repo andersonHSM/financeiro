@@ -4,15 +4,46 @@
   display: flex;
 }
 
+mat-icon,
+* {
+  color: white;
+}
+
+.sidenavToggleWrapper {
+  margin-top: 5px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.sidenavToggleWrapper span {
+  margin-left: 15px;
+  white-space: normal;
+  font-weight: 450;
+  font-size: 1.2em;
+}
+
+.actions-lg #sidenavToggleButton {
+  margin-left: auto;
+}
+
 .actions-lg,
 .actions-sm {
-  margin-top: 5px;
-  font-size: 1rem;
   display: flex;
   flex-flow: column;
   background-color: transparent;
   width: 100%;
   height: auto;
+}
+
+.actions-sm {
+  align-items: center;
+}
+
+.actions-sm a {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .actions-lg a,
@@ -22,7 +53,6 @@
   display: flex;
   white-space: nowrap;
   align-items: center;
-  color: white;
   padding: 15px;
   transition: padding 0.1s ease-in;
 }
@@ -30,7 +60,6 @@
 .actions-sm a,
 .actions-sm button,
 .actions-lg button {
-  padding: 15px;
   background-color: transparent;
   outline: none;
   border: none;
@@ -46,15 +75,11 @@ mat-icon {
 }
 .actions-lg mat-icon {
   margin-right: 5px;
-  line-height: 0.95;
-}
-.actions-sm mat-icon {
-  line-height: 0.95;
 }
 
-.actions-lg a:hover/* ,
-.actions-lg button:hover */ {
-  padding-left: 25px;
+.actions-lg a:hover,
+.actions-sm a:hover {
+  background-color: #065aba !important;
 }
 
 .active {

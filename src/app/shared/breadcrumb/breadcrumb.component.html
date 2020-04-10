@@ -1,9 +1,5 @@
 <div class="breadcrumb">
-    <ng-container *ngFor="let breadCrumb of breadCrumbs; let i=index">
-        <button [routerLink]="[breadCrumb.path]" [disabled]="breadCrumbs.length - 1 == i"
-            [ngStyle]="{'color': breadCrumbs.length - 1 == i ? '#919191' : ''}">
-            {{breadCrumb.breadCrumb}}
-        </button>
-        <span *ngIf="breadCrumbs.length - 1 !== i"> /</span>
-    </ng-container>
+  <ng-container *ngIf="pageInfo">
+    {{pageInfo.breadCrumb}}
+  </ng-container>
 </div>

@@ -1,11 +1,11 @@
-import { Injectable } from "@angular/core";
-import { BehaviorSubject, Observable } from "rxjs";
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root',
 })
 export class DashService {
-  private dashState$ = new BehaviorSubject(false);
+  private dashState$ = new BehaviorSubject(true);
 
   constructor() {}
 
