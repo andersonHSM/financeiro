@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { DashComponent } from './dash.component';
 import { RouterModule } from '@angular/router';
@@ -13,7 +14,7 @@ const COMPONENTS = [];
     ToolbarActionsComponent,
     SidenavActionsComponent,
   ],
-  imports: [SharedModule, RouterModule],
+  imports: [SharedModule, RouterModule, ScrollingModule],
   exports: [DashComponent],
 })
 export class DashModule {}

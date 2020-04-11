@@ -6,15 +6,17 @@
     </div>
   </mat-sidenav>
   <mat-sidenav-content id="sidenav-content">
-    <mat-toolbar style="height: 64px;">
-      <mat-toolbar-row>
-        <app-breadcrumb></app-breadcrumb>
-        <span id="toolbar-actions">
-          <app-toolbar-actions></app-toolbar-actions>
-        </span>
-      </mat-toolbar-row>
-    </mat-toolbar>
-    <div class="main-content">
+    <div class="toolbar-wrapper" [ngClass]="{'toolbar-divider': sidenavContentScrolled}">
+      <mat-toolbar>
+        <mat-toolbar-row>
+          <app-breadcrumb></app-breadcrumb>
+          <span id="toolbar-actions">
+            <app-toolbar-actions></app-toolbar-actions>
+          </span>
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </div>
+    <div class="main-content" cdkScrollable measureScrollOffset="top">
       <ng-content></ng-content>
     </div>
   </mat-sidenav-content>

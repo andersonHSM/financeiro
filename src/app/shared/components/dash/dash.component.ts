@@ -1,10 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { ScrollDispatcher } from '@angular/cdk/scrolling';
+
 import { DashService } from 'src/app/services/dash.service';
 import { Subject } from 'rxjs';
 import { tap, takeUntil } from 'rxjs/operators';
 import {
   Router,
-  ActivatedRoute,
   NavigationEnd,
   NavigationStart,
   NavigationError,
@@ -30,16 +31,26 @@ export class DashComponent implements OnInit, OnDestroy {
   sidenavContent: HTMLElement;
 
   sidenavHovered: boolean;
+  sidenavContentScrolled: boolean;
+
+  /** Variável que controla a quantidade de scrolls realizados
+   * para limitir o detectChanges a uma única execução ao
+   * realizar o scroll do conteúdo da página
+   */
+  scrollCounter = 0;
 
   constructor(
     private readonly dashService: DashService,
     private readonly router: Router,
+    private readonly scrollDispatcher: ScrollDispatcher,
+    private readonly changeDetectorRef: ChangeDetectorRef,
   ) {}
 
   ngOnInit(): void {
     this.sidenav = document.getElementById('sidenav');
     this.sidenavContent = document.getElementById('sidenav-content');
     this.openSidenav();
+    this.reactToScroll();
     /**
      * Variável que armazena a url inicial
      * para verificar se o usuário deve ser redirecionado
@@ -116,6 +127,25 @@ export class DashComponent implements OnInit, OnDestroy {
   closeSidenav() {
     this.sidenavContent.style.marginLeft = '60px';
     this.sidenav.style.width = '60px';
+  }
+
+  reactToScroll() {
+    this.scrollDispatcher
+      .scrolled()
+      .pipe(takeUntil(this.destroySubscriptions$))
+      .subscribe((res) => {
+        if (this.sidenavContent.scrollTop !== 0) {
+          this.scrollCounter += 1;
+          if (this.scrollCounter <= 1) {
+            this.sidenavContentScrolled = true;
+            this.changeDetectorRef.detectChanges();
+          }
+        } else if (this.sidenavContent.scrollTop === 0) {
+          this.scrollCounter = 0;
+          this.sidenavContentScrolled = false;
+          this.changeDetectorRef.detectChanges();
+        }
+      });
   }
 
   ngOnDestroy(): void {
