@@ -3,7 +3,7 @@ import {
   ActivatedRoute,
   ActivatedRouteSnapshot,
   Router,
-  NavigationEnd
+  NavigationEnd,
 } from "@angular/router";
 
 interface Breadcrumb {
@@ -15,14 +15,14 @@ interface Breadcrumb {
 @Component({
   selector: "app-breadcrumb",
   templateUrl: "./breadcrumb.component.html",
-  styleUrls: ["./breadcrumb.component.scss"]
+  styleUrls: ["./breadcrumb.component.scss"],
 })
 export class BreadcrumbComponent implements OnInit {
   snapshotFromRoot: ActivatedRouteSnapshot[];
 
   levels = "firstChild";
 
-  breadCrumbs: Breadcrumb[] = [];
+  pageInfo: Breadcrumb;
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
@@ -31,7 +31,7 @@ export class BreadcrumbComponent implements OnInit {
 
   ngOnInit(): void {
     this.getBreadcrumbs();
-    this.router.events.subscribe(event => {
+    this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.levels = "firstChild";
         this.getBreadcrumbs();
@@ -40,7 +40,6 @@ export class BreadcrumbComponent implements OnInit {
   }
 
   getBreadcrumbs() {
-    this.breadCrumbs.length = 0;
     while (eval(`this.activatedRoute.snapshot.${this.levels}`) !== null) {
       this.snapshotFromRoot = eval(
         `this.activatedRoute.snapshot.${this.levels}.pathFromRoot`
@@ -48,10 +47,7 @@ export class BreadcrumbComponent implements OnInit {
       this.levels = this.levels + ".firstChild";
     }
 
-    this.snapshotFromRoot.forEach(level => {
-      if (level.data.breadCrumb) {
-        this.breadCrumbs.push(level.data as Breadcrumb);
-      }
-    });
+    this.pageInfo = this.snapshotFromRoot[this.snapshotFromRoot.length - 1]
+      .data as Breadcrumb;
   }
 }

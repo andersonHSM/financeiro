@@ -1,13 +1,14 @@
-import { Component, OnInit, Input, OnChanges } from "@angular/core";
-import { DashService } from "src/app/services/dash.service";
+import { Component, OnInit, Input } from '@angular/core';
+import { DashService } from 'src/app/services/dash.service';
 
 @Component({
-  selector: "app-sidenav-actions",
-  templateUrl: "./sidenav-actions.component.html",
-  styleUrls: ["./sidenav-actions.component.scss"]
+  selector: 'app-sidenav-actions',
+  templateUrl: './sidenav-actions.component.html',
+  styleUrls: ['./sidenav-actions.component.scss'],
 })
-export class SidenavActionsComponent implements OnInit, OnChanges {
+export class SidenavActionsComponent implements OnInit {
   @Input() opened: boolean;
+  @Input() hovered: boolean;
 
   dashState: boolean;
 
@@ -16,13 +17,9 @@ export class SidenavActionsComponent implements OnInit, OnChanges {
   constructor(private readonly dashService: DashService) {}
 
   ngOnInit(): void {
-    this.dashService.getDashState().subscribe(state => {
+    this.dashService.getDashState().subscribe((state) => {
       this.dashState = state;
     });
-  }
-
-  ngOnChanges(): void {
-    // console.log(this.opened);
   }
 
   toggleSidenav() {

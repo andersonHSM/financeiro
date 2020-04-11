@@ -1,35 +1,36 @@
-<ng-container *ngIf="opened">
-    <div class="actions-lg">
-        <button (click)="toggleSidenav()">
-            <mat-icon *ngIf="dashState">
-                menu_open</mat-icon>
-            <span>Fechar menu</span>
-        </button>
-        <a [routerLink]="['/panel/index']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-            <mat-icon>home</mat-icon>
-            <span>Início</span>
-        </a>
-        <a [routerLink]="['/panel/accounts']" routerLinkActive="active">
-            <mat-icon>account_balance
-            </mat-icon>
-            <span>Suas contas</span>
-        </a>
-    </div>
-</ng-container>
-
-<ng-container *ngIf="!opened">
-    <div class="actions-sm">
-        <button (click)="toggleSidenav()" matTooltipPosition="after" matTooltip="Abrir menu">
-            <mat-icon>menu</mat-icon>
-        </button>
-        <a matTooltip="Início" matTooltipPosition="after" [routerLink]="['/panel/index']" routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact:true}">
-            <mat-icon>home</mat-icon>
-        </a>
-        <a matTooltip=" Suas contas" matTooltipPosition="after" [routerLink]="['/panel/accounts']"
-            routerLinkActive="active">
-            <mat-icon>account_balance
-            </mat-icon>
-        </a>
-    </div>
-</ng-container>
+<div
+  [ngClass]="{
+    'actions-lg': opened || hovered,
+    'actions-sm': !opened && !hovered
+  }"
+>
+  <div class="sidenavToggleWrapper">
+    <span *ngIf="opened || hovered">Smart Wallet</span>
+    <button
+      id="sidenavToggleButton"
+      (click)="toggleSidenav()"
+      matTooltipPosition="after"
+      [matTooltip]="!opened ? 'Abrir menu' : 'Fechar menu'"
+    >
+      <mat-icon>
+        {{ opened ? 'menu_open' : 'menu' }}
+      </mat-icon>
+    </button>
+  </div>
+  <a
+    [routerLink]="['/panel/index']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <mat-icon>dashboard</mat-icon>
+    <span *ngIf="opened || hovered">Dashboard</span>
+  </a>
+  <a [routerLink]="['/panel/accounts']" routerLinkActive="active">
+    <mat-icon>account_balance_wallet</mat-icon>
+    <span *ngIf="opened || hovered">Contas</span>
+  </a>
+  <a [routerLink]="['/panel/groups']" routerLinkActive="active">
+    <mat-icon>group</mat-icon>
+    <span *ngIf="opened || hovered">Grupos</span>
+  </a>
+</div>

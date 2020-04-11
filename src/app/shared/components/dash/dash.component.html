@@ -1,20 +1,23 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav mode="side" opened=true id="sidenav">
-        <div class="sidenav-actions">
-            <app-sidenav-actions [opened]="sidenavOpened"></app-sidenav-actions>
-        </div>
-    </mat-sidenav>
-    <mat-sidenav-content id="sidenav-content">
-        <mat-toolbar style="height: 64px;">
-            <mat-toolbar-row>
-                <app-breadcrumb></app-breadcrumb>
-                <span id="toolbar-actions">
-                    <app-toolbar-actions></app-toolbar-actions>
-                </span>
-            </mat-toolbar-row>
-        </mat-toolbar>
-        <div class="main-content">
-            <ng-content></ng-content>
-        </div>
-    </mat-sidenav-content>
+  <mat-sidenav mode="side" opened=true id="sidenav" (mouseover)="captureSidenavHoverInAndOut($event)"
+    (mouseleave)="captureSidenavHoverInAndOut($event)">
+    <div class="sidenav-actions">
+      <app-sidenav-actions [opened]="sidenavOpened" [hovered]="sidenavHovered"></app-sidenav-actions>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content id="sidenav-content">
+    <div class="toolbar-wrapper" [ngClass]="{'toolbar-divider': sidenavContentScrolled}">
+      <mat-toolbar>
+        <mat-toolbar-row>
+          <app-breadcrumb></app-breadcrumb>
+          <span id="toolbar-actions">
+            <app-toolbar-actions></app-toolbar-actions>
+          </span>
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </div>
+    <div class="main-content" cdkScrollable measureScrollOffset="top">
+      <ng-content select=".main-content"></ng-content>
+    </div>
+  </mat-sidenav-content>
 </mat-sidenav-container>

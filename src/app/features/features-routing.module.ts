@@ -1,26 +1,27 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     children: [
+      { path: '', redirectTo: 'panel', pathMatch: 'full' },
       {
-        path: "panel",
+        path: 'panel',
         loadChildren: () =>
-          import("./panel/panel.module").then(panel => panel.PanelModule)
+          import('./panel/panel.module').then((module) => module.PanelModule),
       },
       {
-        path: "autenticacao",
+        path: 'autenticacao',
         loadChildren: () =>
-          import("./auth/auth.module").then(auth => auth.AuthModule)
-      }
-    ]
-  }
+          import('./auth/auth.module').then((module) => module.AuthModule),
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class FeaturesRoutingModule {}
