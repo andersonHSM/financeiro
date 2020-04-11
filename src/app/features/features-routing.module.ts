@@ -9,12 +9,12 @@ const routes: Routes = [
       {
         path: 'panel',
         loadChildren: () =>
-          import('./panel/panel.module').then((panel) => panel.PanelModule),
+          import('./panel/panel.module').then((module) => module.PanelModule),
       },
       {
         path: 'autenticacao',
         loadChildren: () =>
-          import('./auth/auth.module').then((auth) => auth.AuthModule),
+          import('./auth/auth.module').then((module) => module.AuthModule),
       },
     ],
   },

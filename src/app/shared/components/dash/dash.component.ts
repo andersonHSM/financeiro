@@ -50,7 +50,9 @@ export class DashComponent implements OnInit, OnDestroy {
     this.sidenav = document.getElementById('sidenav');
     this.sidenavContent = document.getElementById('sidenav-content');
     this.openSidenav();
+    this.sidenavOpened = true;
     this.reactToScroll();
+
     /**
      * Variável que armazena a url inicial
      * para verificar se o usuário deve ser redirecionado

@@ -23,7 +23,14 @@ const routes: Routes = [
         path: 'accounts',
         loadChildren: () =>
           import('./accounts/accounts.module').then(
-            (accounts) => accounts.AccountsModule,
+            (module) => module.AccountsModule,
+          ),
+      },
+      {
+        path: 'groups',
+        loadChildren: () =>
+          import('./groups/groups.module').then(
+            (module) => module.GroupsModule,
           ),
       },
     ],

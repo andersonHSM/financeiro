@@ -1,20 +1,36 @@
-<div [ngClass]="{'actions-lg': opened || hovered, 'actions-sm': !opened && !hovered}">
+<div
+  [ngClass]="{
+    'actions-lg': opened || hovered,
+    'actions-sm': !opened && !hovered
+  }"
+>
   <div class="sidenavToggleWrapper">
     <span *ngIf="opened || hovered">Smart Wallet</span>
-    <button id="sidenavToggleButton" (click)="toggleSidenav()" matTooltipPosition="after"
-      [matTooltip]=" !opened ? 'Abrir menu' : 'Fechar menu'">
+    <button
+      id="sidenavToggleButton"
+      (click)="toggleSidenav()"
+      matTooltipPosition="after"
+      [matTooltip]="!opened ? 'Abrir menu' : 'Fechar menu'"
+    >
       <mat-icon>
-        {{opened ? 'menu_open' : 'menu'}}
+        {{ opened ? 'menu_open' : 'menu' }}
       </mat-icon>
     </button>
   </div>
-  <a [routerLink]="['/panel/index']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-    <mat-icon>home</mat-icon>
-    <span *ngIf="opened || hovered">Início</span>
+  <a
+    [routerLink]="['/panel/index']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <mat-icon>dashboard</mat-icon>
+    <span *ngIf="opened || hovered">Dashboard</span>
   </a>
   <a [routerLink]="['/panel/accounts']" routerLinkActive="active">
-    <mat-icon>account_balance
-    </mat-icon>
-    <span *ngIf="opened || hovered">Suas contas</span>
+    <mat-icon>account_balance_wallet</mat-icon>
+    <span *ngIf="opened || hovered">Contas</span>
+  </a>
+  <a [routerLink]="['/panel/groups']" routerLinkActive="active">
+    <mat-icon>group</mat-icon>
+    <span *ngIf="opened || hovered">Grupos</span>
   </a>
 </div>
