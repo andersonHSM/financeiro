@@ -7,17 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: AccountsComponent,
-    data: {
-      breadCrumb: 'Contas',
-      path: '/accounts',
-    },
+
     children: [
       { path: '', redirectTo: 'view' },
       {
         path: 'view',
         component: AccountsViewComponent,
         data: {
-          breadCrumb: 'Suas Contas',
+          breadCrumb: 'Contas',
           path: '/accounts/view',
         },
       },
