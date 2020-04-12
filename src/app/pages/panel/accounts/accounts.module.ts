@@ -12,7 +12,6 @@ import { AccountsRoutingModule } from './accounts-routing.module';
 import { AccountsComponent } from './accounts.component';
 import { AccountsViewModule } from './accounts-view/accounts-view.module';
 
-
 const COMPONENTS = [AccountsComponent];
 
 @NgModule({
@@ -21,7 +20,7 @@ const COMPONENTS = [AccountsComponent];
     CommonModule,
     AccountsRoutingModule,
     StoreModule.forFeature(accountFeatureKey, accountReducer),
-    AccountsViewModule
+    AccountsViewModule,
   ],
 })
 export class AccountsModule {}
