@@ -113,14 +113,19 @@
   height: 50px;
   padding: 0 20px 5px 15px;
   & .account-card-edit-button {
+    margin-left: 5px;
+  }
+
+  & .account-card-group-button {
     margin-left: auto;
   }
+
   & .account-card-remove-button {
     display: flex;
     justify-content: center;
     border-radius: 50%;
     border: none;
-    margin: auto 0;
+    margin: auto auto auto 0;
     background-color: transparent;
     width: 36px;
     height: 36px;
