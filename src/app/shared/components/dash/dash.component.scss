@@ -1,7 +1,7 @@
-$main-backgound: #fefefe;
+@import '../../../../variables.scss';
 .toolbar-wrapper {
   height: 64px;
-  background-color: $main-backgound;
+  background-color: $main-background;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -9,7 +9,7 @@ $main-backgound: #fefefe;
   & mat-toolbar {
     height: 100%;
     width: 100%;
-    background-color: $main-backgound;
+    background-color: $main-background;
   }
 }
 
@@ -42,7 +42,7 @@ $main-backgound: #fefefe;
 }
 
 .sidenav-container {
-  background-color: $main-backgound;
+  background-color: $main-background;
   height: 100%;
 }
 mat-sidenav-content {
@@ -57,5 +57,5 @@ mat-sidenav-content {
   flex-wrap: wrap;
   min-width: 100%;
   min-height: calc(100% - 64px);
-  background-color: $main-backgound;
+  background-color: $main-background;
 }
