@@ -7,10 +7,11 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FeaturesRoutingModule } from "./features/features-routing.module";
 import { FeaturesModule } from "./features/features.module";
 import { MaterialModule } from "./material/material.module";
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, FeaturesModule, BrowserAnimationsModule],
+  imports: [BrowserModule, FeaturesModule, BrowserAnimationsModule, StoreModule.forRoot({}, {})],
   providers: [],
   bootstrap: [AppComponent]
 })
