@@ -7,6 +7,4 @@ export interface AccountModel {
   color: string;
 }
 
-export interface AccountState {
-  accounts: AccountModel[];
-}
+export type AccountState = AccountModel[];

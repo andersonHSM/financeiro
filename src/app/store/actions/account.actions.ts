@@ -7,3 +7,9 @@ export const createAccount = createAction(
   '[ACCOUNTS] Create New Account',
   props<AccountModel>(),
 );
+
+export const accountsActions = {
+  getAccounts,
+  createAccount,
+};
+

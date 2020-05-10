@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import * as accountsActions from '../../../../store/actions/account.actions';
+import { accountsActions } from '@app/store';
 import { AccountState } from 'src/app/shared/models/account.model';
 
 @Component({
@@ -10,9 +10,10 @@ import { AccountState } from 'src/app/shared/models/account.model';
   styleUrls: ['./accounts-view.component.scss'],
 })
 export class AccountsViewComponent implements OnInit {
-  constructor(private store: Store<{ account: AccountState }>) {}
+  constructor(private store: Store<{ accounts: AccountState }>) {}
 
   ngOnInit(): void {
+    this.store.subscribe(({accounts}) => console.log(accounts));
     this.store.dispatch(
       accountsActions.createAccount({
         id: 3,
@@ -23,6 +24,5 @@ export class AccountsViewComponent implements OnInit {
         color: 'white',
       }),
     );
-    this.store.subscribe((res) => console.log(res.account));
   }
 }

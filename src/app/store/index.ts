@@ -1,8 +1,11 @@
 /* Actions */
-export * as accountActions from './actions/account.actions';
+export { accountsActions } from './actions/account.actions';
 
 /* Reducers */
-export * as accountReducer from './reducers/account.reducer';
+export {
+  accountFeatureKey,
+  reducer as accountReducer,
+} from './reducers/account.reducer';
 
 /* State */
 export { AccountsState } from './state/account.state';

@@ -10,7 +10,7 @@ import { AccountsRoutingModule } from './accounts-routing.module';
 import { AccountsViewComponent } from './accounts-view/accounts-view.component';
 import { AccountsComponent } from './accounts.component';
 
-import { accountReducer } from '@app/store';
+import { accountReducer, accountFeatureKey } from '@app/store';
 
 const COMPONENTS = [AccountsViewComponent, AccountsComponent];
 const MATERIAL_IMPORTS = [MatButtonModule, MatDividerModule, MatRippleModule];
@@ -21,10 +21,7 @@ const MATERIAL_IMPORTS = [MatButtonModule, MatDividerModule, MatRippleModule];
     CommonModule,
     AccountsRoutingModule,
     MATERIAL_IMPORTS,
-    StoreModule.forFeature(
-      accountReducer.accountFeatureKey,
-      accountReducer.reducer,
-    ),
+    StoreModule.forFeature(accountFeatureKey, accountReducer),
   ],
 })
 export class AccountsModule {}
