@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
+import { map } from 'rxjs/operators';
+
 import { accountsActions } from '@app/store';
 import { AccountState } from 'src/app/shared/models/account.model';
 
@@ -12,17 +14,11 @@ import { AccountState } from 'src/app/shared/models/account.model';
 export class AccountsViewComponent implements OnInit {
   constructor(private store: Store<{ accounts: AccountState }>) {}
 
+  get accountStore$() {
+    return this.store.pipe(map(({ accounts }) => accounts));
+  }
+
   ngOnInit(): void {
-    this.store.subscribe(({accounts}) => console.log(accounts));
-    this.store.dispatch(
-      accountsActions.createAccount({
-        id: 3,
-        name: 'Banese',
-        balance: '27000',
-        iconClass: 'fa-wallet',
-        backgroundColor: 'green',
-        color: 'white',
-      }),
-    );
+
   }
 }

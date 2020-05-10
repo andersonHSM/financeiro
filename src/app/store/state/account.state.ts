@@ -8,6 +8,7 @@ export const AccountsState: AccountState = [
     iconClass: 'fa-wallet',
     backgroundColor: 'white',
     color: 'black',
+    isGroupal: false,
   },
   {
     id: 2,
@@ -16,5 +17,24 @@ export const AccountsState: AccountState = [
     iconClass: 'fa-donate',
     backgroundColor: 'rgb(138, 5, 190)',
     color: 'white',
+    isGroupal: false,
+  },
+  {
+    id: 3,
+    name: 'Banese',
+    balance: '27000',
+    iconClass: 'fa-piggy-bank',
+    backgroundColor: 'green',
+    color: 'white',
+    isGroupal: false,
+  },
+  {
+    id: 4,
+    name: 'Viagem',
+    balance: '750',
+    backgroundColor: '#082872',
+    color: 'white',
+    isGroupal: true,
+    iconClass: 'fa-users',
   },
 ];

@@ -1,0 +1,32 @@
+<div class="account-card">
+  <div class="account-card-info-wrapper">
+    <div #cardTitleBox class="account-card-title-box">
+      <i class="fas {{ account.iconClass }}"></i>
+      <span class="account-card-title">
+        {{ account.name }}
+      </span>
+    </div>
+    <div class="account-card-body">
+      <span class="account-card-body-title">Saldo</span>
+      <span class="account-card-body-info">{{
+        account.balance | currency
+      }}</span>
+    </div>
+  </div>
+  <div class="account-card-actions">
+    <button class="account-card-remove-button" mat-ripple>
+      <i class="fas fa-trash-alt"></i>
+    </button>
+    <button
+      *ngIf="account.isGroupal"
+      mat-stroked-button
+      class="account-card-group-button"
+      color="primary"
+    >
+      Ver Grupo
+    </button>
+    <button mat-stroked-button class="account-card-edit-button" color="primary">
+      Editar
+    </button>
+  </div>
+</div>
