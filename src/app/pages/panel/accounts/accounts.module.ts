@@ -10,7 +10,7 @@ import { AccountsRoutingModule } from './accounts-routing.module';
 import { AccountsViewComponent } from './accounts-view/accounts-view.component';
 import { AccountsComponent } from './accounts.component';
 
-import * as accountReducer from '../../../store/reducers/account.reducer';
+import { accountReducer } from '@app/store';
 
 const COMPONENTS = [AccountsViewComponent, AccountsComponent];
 const MATERIAL_IMPORTS = [MatButtonModule, MatDividerModule, MatRippleModule];
