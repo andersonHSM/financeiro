@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { map } from 'rxjs/operators';
 
 import { accountsActions } from '@app/store';
+
 import { AccountState } from 'src/app/shared/models/account.model';
 
 @Component({
@@ -19,6 +20,10 @@ export class AccountsViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    setTimeout(() => {
+      this.store.dispatch(
+        accountsActions.editAccount({ id: 2, name: 'Teste Edição' }),
+      );
+    }, 1000);
   }
 }

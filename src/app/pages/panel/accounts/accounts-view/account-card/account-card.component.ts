@@ -33,11 +33,14 @@ export class AccountCardComponent implements OnInit, AfterViewInit {
   }
 
   applyCardColor() {
-    const { nativeElement: cardTitleBoxDiv} = this.cardTitleBox;
+    const { nativeElement: cardTitleBoxDiv } = this.cardTitleBox;
 
     cardTitleBoxDiv.style.backgroundColor = this.account.backgroundColor;
     cardTitleBoxDiv.style.color = this.account.color;
+  }
 
-
+  get checkForChangeDetection(): boolean {
+    console.log('ran change detection');
+    return null;
   }
 }
