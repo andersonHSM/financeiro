@@ -6,16 +6,17 @@ import { accountReducer, accountFeatureKey } from '@app/store';
 
 import { AccountsRoutingModule } from './accounts-routing.module';
 import { AccountsComponent } from './accounts.component';
-import { AccountsViewModule } from './accounts-view/accounts-view.module';
 
-const COMPONENTS = [AccountsComponent];
+import { AccountsViewModule } from './accounts-view/accounts-view.module';
+import { AccountsCreateModule } from './accounts-create/accounts-create.module';
 
 @NgModule({
-  declarations: [COMPONENTS],
+  declarations: [AccountsComponent],
   imports: [
     CommonModule,
     AccountsRoutingModule,
     StoreModule.forFeature(accountFeatureKey, accountReducer),
+    AccountsCreateModule,
     AccountsViewModule,
   ],
 })

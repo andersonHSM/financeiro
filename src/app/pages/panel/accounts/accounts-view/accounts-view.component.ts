@@ -19,11 +19,5 @@ export class AccountsViewComponent implements OnInit {
     return this.store.pipe(map(({ accounts }) => accounts));
   }
 
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.store.dispatch(
-        accountsActions.editAccount({ id: 2, name: 'Teste Edição' }),
-      );
-    }, 1000);
-  }
+  ngOnInit(): void {}
 }

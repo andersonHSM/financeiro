@@ -38,9 +38,4 @@ export class AccountCardComponent implements OnInit, AfterViewInit {
     cardTitleBoxDiv.style.backgroundColor = this.account.backgroundColor;
     cardTitleBoxDiv.style.color = this.account.color;
   }
-
-  get checkForChangeDetection(): boolean {
-    console.log('ran change detection');
-    return null;
-  }
 }
