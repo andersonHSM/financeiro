@@ -11,11 +11,18 @@ export class AccountsCreateComponent implements OnInit {
 
   constructor(private readonly formBuilder: FormBuilder) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.initForm();
+  }
 
   initForm(): void {
     this.createAccountForm = this.formBuilder.group({
       name: this.formBuilder.control('', [Validators.required]),
+      balance: this.formBuilder.control(''),
+      iconClass: this.formBuilder.control('', [Validators.required]),
+      backgroundColor: this.formBuilder.control('', [Validators.required]),
+      color: this.formBuilder.control('', [Validators.required]),
+      isGroupal: this.formBuilder.control('', [Validators.required])
     });
   }
 }
