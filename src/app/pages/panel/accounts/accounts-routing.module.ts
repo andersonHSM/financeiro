@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { AccountsComponent } from './accounts.component';
 import { AccountsViewComponent } from './accounts-view/accounts-view.component';
-import { AccountCreateComponent } from './account-create/account-create.component';
+import { AccountsCreateComponent } from './accounts-create/accounts-create.component';
 
 const routes: Routes = [
   {
@@ -20,7 +21,7 @@ const routes: Routes = [
       },
       {
         path: 'create',
-        component: AccountCreateComponent,
+        component: AccountsCreateComponent,
         data: {
           breadCrumb: 'Nova Conta',
           path: '/accounts/create',
