@@ -6,25 +6,22 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatRippleModule } from '@angular/material/core';
 
+import { accountReducer, accountFeatureKey } from '@app/store';
+
 import { AccountsRoutingModule } from './accounts-routing.module';
-import { AccountsViewComponent } from './accounts-view/accounts-view.component';
 import { AccountsComponent } from './accounts.component';
+import { AccountsViewModule } from './accounts-view/accounts-view.module';
 
-import * as accountReducer from '../../../store/reducers/account.reducer';
 
-const COMPONENTS = [AccountsViewComponent, AccountsComponent];
-const MATERIAL_IMPORTS = [MatButtonModule, MatDividerModule, MatRippleModule];
+const COMPONENTS = [AccountsComponent];
 
 @NgModule({
   declarations: [COMPONENTS],
   imports: [
     CommonModule,
     AccountsRoutingModule,
-    MATERIAL_IMPORTS,
-    StoreModule.forFeature(
-      accountReducer.accountFeatureKey,
-      accountReducer.reducer,
-    ),
+    StoreModule.forFeature(accountFeatureKey, accountReducer),
+    AccountsViewModule
   ],
 })
 export class AccountsModule {}

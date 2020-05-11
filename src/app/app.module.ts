@@ -1,18 +1,15 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, DEFAULT_CURRENCY_CODE } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreModule } from "@ngrx/store";
 
-import { AppRoutingModule } from "./app-routing.module";
-import { AppComponent } from "./app.component";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { FeaturesRoutingModule } from "./features/features-routing.module";
-import { FeaturesModule } from "./features/features.module";
-import { MaterialModule } from "./material/material.module";
-import { StoreModule } from '@ngrx/store';
+import { AppComponent } from './app.component';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, FeaturesModule, BrowserAnimationsModule, StoreModule.forRoot({}, {})],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, PagesModule, BrowserAnimationsModule, StoreModule.forRoot({})],
+  providers: [{provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL'}],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

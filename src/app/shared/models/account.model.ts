@@ -5,8 +5,7 @@ export interface AccountModel {
   iconClass: string;
   backgroundColor: string;
   color: string;
+  isGroupal: boolean;
 }
 
-export interface AccountState {
-  accounts: AccountModel[];
-}
+export type AccountState = AccountModel[];

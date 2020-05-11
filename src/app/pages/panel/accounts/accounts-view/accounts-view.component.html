@@ -1,0 +1,14 @@
+<div class="account-grid">
+  <ng-container *ngIf="accountStore$ | async as accounts">
+    <ng-container *ngFor="let account of accounts">
+      <app-account-card [account]="account"></app-account-card>
+    </ng-container>
+  </ng-container>
+</div>
+
+<div class="account-add-button-container">
+  <button mat-button color="primary" class="account-add-button">
+    <i class="fas fa-plus"></i>
+    <small>Adicionar uma nova conta</small>
+  </button>
+</div>
