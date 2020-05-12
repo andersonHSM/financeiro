@@ -1,5 +1,5 @@
 <div #colorBox class="color-box mat-elevation-z2">
-  <mat-expansion-panel>
+  <mat-expansion-panel #expansionPanel>
     <mat-expansion-panel-header>
       <mat-panel-title>
         <span>Cor</span>
@@ -13,7 +13,7 @@
     <div class="color-list">
       <ng-container *ngFor="let colorObject of defaultColors">
         <button
-          (click)="selectColor(colorObject)"
+          (click)="selectColor(colorObject, expansionPanel)"
           [ngStyle]="{ 'background-color': colorObject.backgroundColor }"
           class="circle select-color"
         ></button>

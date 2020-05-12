@@ -75,7 +75,9 @@
         ngClass.gt-sm="form-field-gt-sm"
         ngClass.lt-md="form-field-flex-lt-md "
       >
-        <app-accounts-color-sample></app-accounts-color-sample>
+        <app-accounts-color-sample
+          (colorInfoEmitter)="setColorInfo($event)"
+        ></app-accounts-color-sample>
       </div>
     </div>
     <div class="buttons-wrapper" fxLayoutAlign="row" fxLayoutGap="10px">

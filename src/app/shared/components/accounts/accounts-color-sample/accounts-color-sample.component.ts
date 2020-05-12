@@ -5,12 +5,12 @@ import {
   ViewChild,
   ElementRef,
   AfterViewInit,
+  EventEmitter,
+  Output,
 } from '@angular/core';
+import { MatExpansionPanel } from '@angular/material/expansion';
 
-interface ColorObject {
-  backgroundColor: string;
-  color: string;
-}
+import { ColorObject } from 'src/app/shared/models/color-object.model';
 
 @Component({
   selector: 'app-accounts-color-sample',
@@ -18,7 +18,7 @@ interface ColorObject {
   styleUrls: ['./accounts-color-sample.component.scss'],
 })
 export class AccountsColorSampleComponent implements OnInit, AfterViewInit {
-  public defaultColors: ColorObject[] = [
+  defaultColors: ColorObject[] = [
     // { backgroundColor: '#ffffff', color: 'black' },
     { backgroundColor: '#000105', color: 'white' },
     { backgroundColor: '#3e6158', color: 'white' },
@@ -34,6 +34,8 @@ export class AccountsColorSampleComponent implements OnInit, AfterViewInit {
     { backgroundColor: '#62382f', color: 'white' },
   ];
 
+  @Output() colorInfoEmitter = new EventEmitter<ColorObject>();
+
   selectedColor: ColorObject;
 
   @ViewChild('colorBox', { static: false }) private colorBox: ElementRef<
@@ -47,7 +49,13 @@ export class AccountsColorSampleComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {}
 
-  selectColor(color: ColorObject): void {
+  selectColor(
+    color: ColorObject,
+    expansionPanelInstance: MatExpansionPanel,
+  ): void {
     this.selectedColor = color;
+    expansionPanelInstance.close();
+
+    this.colorInfoEmitter.emit(color);
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ColorObject } from 'src/app/shared/models/color-object.model';
 
 @Component({
   selector: 'app-accounts-create',
@@ -26,7 +27,10 @@ export class AccountsCreateComponent implements OnInit {
     });
   }
 
-  checkColorPicker(accountColor) {
-    console.log(accountColor);
+  setColorInfo(colorInfoObject: ColorObject) {
+    this.createAccountForm.patchValue({
+      backgroundColor: colorInfoObject.backgroundColor,
+      color: colorInfoObject.color,
+    });
   }
 }
