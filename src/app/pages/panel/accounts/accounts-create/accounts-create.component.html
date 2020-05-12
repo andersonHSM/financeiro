@@ -1,5 +1,87 @@
-<form [formGroup]="createAccountForm">
-  <mat-form-field>
-    <input type="text" matInput>
-  </mat-form-field>
+<form
+  [formGroup]="createAccountForm"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+  fxLayoutGap="15px"
+>
+  <div
+    fxLayout="row wrap"
+    fxLayoutAlign="center"
+    fxLayout.lt-md="column wrap"
+    fxLayoutAlign.lt-md="center space-around"
+    fxLayoutGap="15px"
+    class="form-field-row-wrapper"
+  >
+    <mat-form-field
+      ngClass.gt-sm="form-field-gt-sm"
+      ngClass.lt-md="form-field-flex-lt-md "
+    >
+      <mat-label>Nome</mat-label>
+      <input type="text" matInput autocomplete="off" />
+    </mat-form-field>
+    <mat-form-field
+      ngClass.gt-sm="form-field-gt-sm"
+      ngClass.lt-md="form-field-flex-lt-md "
+    >
+      <mat-label>Saldo Inicial</mat-label>
+      <input type="text" matInput autocomplete="off" />
+    </mat-form-field>
+  </div>
+
+  <div
+    fxLayout="row wrap"
+    fxLayoutAlign="center center"
+    fxLayout.lt-md="column"
+    fxLayoutAlign.lt-md="center center"
+    fxLayoutGap="15px"
+    class="form-field-row-wrapper"
+  >
+    <mat-form-field
+      ngClass.gt-sm="form-field-gt-sm"
+      ngClass.lt-md="form-field-flex-lt-md "
+    >
+      <mat-label>Cor</mat-label>
+      <mat-select>
+        <mat-option value="Grupo 1">Grupo 1</mat-option>
+        <mat-option value="Grupo 2">Grupo 2</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field
+      ngClass.gt-sm="form-field-gt-sm"
+      ngClass.lt-md="form-field-flex-lt-md "
+    >
+      <mat-label>Tipo</mat-label>
+      <mat-select>
+        <mat-option [value]="null">--</mat-option>
+        <mat-option value="Grupo 1">Grupo 1</mat-option>
+        <mat-option value="Grupo 2">Grupo 2</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div
+    fxLayout="row wrap"
+    fxLayoutAlign="center center"
+    fxLayout.lt-md="column"
+    fxLayoutAlign.lt-md="center center"
+    fxLayoutGap="15px"
+    class="form-field-row-wrapper"
+  >
+    <mat-form-field
+      ngClass.gt-sm="form-field-gt-sm"
+      ngClass.lt-md="form-field-flex-lt-md "
+    >
+      <mat-label>Grupo</mat-label>
+      <mat-select>
+        <mat-option value="Grupo 1">Grupo 1</mat-option>
+        <mat-option value="Grupo 2">Grupo 2</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="buttons-wrapper" fxLayoutAlign="row" fxLayoutGap="10px">
+    <button mat-raised-button color="accent" [routerLink]="['..']">
+      Voltar
+    </button>
+    <button mat-raised-button color="primary" type="submit">Adicionar</button>
+  </div>
 </form>

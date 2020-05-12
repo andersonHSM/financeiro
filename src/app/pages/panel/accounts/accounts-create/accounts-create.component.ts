@@ -7,7 +7,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./accounts-create.component.scss'],
 })
 export class AccountsCreateComponent implements OnInit {
+  fxFlexGtSm = '0 1 calc(25% - 15px)';
+  fxFlexLtMd = '0 1 calc(75% - 15px)'
   createAccountForm: FormGroup;
+
 
   constructor(private readonly formBuilder: FormBuilder) {}
 
