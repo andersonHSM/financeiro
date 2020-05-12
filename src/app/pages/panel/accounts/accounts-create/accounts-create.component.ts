@@ -7,10 +7,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./accounts-create.component.scss'],
 })
 export class AccountsCreateComponent implements OnInit {
-  fxFlexGtSm = '0 1 calc(25% - 15px)';
-  fxFlexLtMd = '0 1 calc(75% - 15px)'
-  createAccountForm: FormGroup;
+  // TODO - alterar para a interface correta
+  accountsColorsArray: { backgroundColor: string; color: string }[] = [
+    { backgroundColor: 'white', color: 'black' },
+    { backgroundColor: 'rgb(138, 5, 190)', color: 'white' },
+    { backgroundColor: 'green', color: 'white' },
+    { backgroundColor: '#082872', color: 'white' },
+  ];
 
+  createAccountForm: FormGroup;
 
   constructor(private readonly formBuilder: FormBuilder) {}
 
@@ -25,7 +30,11 @@ export class AccountsCreateComponent implements OnInit {
       iconClass: this.formBuilder.control('', [Validators.required]),
       backgroundColor: this.formBuilder.control('', [Validators.required]),
       color: this.formBuilder.control('', [Validators.required]),
-      isGroupal: this.formBuilder.control('', [Validators.required])
+      isGroupal: this.formBuilder.control('', [Validators.required]),
     });
+  }
+
+  checkColorPicker(accountColor) {
+    console.log(accountColor);
   }
 }

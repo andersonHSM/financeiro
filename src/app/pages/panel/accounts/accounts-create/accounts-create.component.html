@@ -42,8 +42,15 @@
     >
       <mat-label>Cor</mat-label>
       <mat-select>
-        <mat-option value="Grupo 1">Grupo 1</mat-option>
-        <mat-option value="Grupo 2">Grupo 2</mat-option>
+        <mat-option style="background-color: red;" value="red">--</mat-option>
+        <ng-container *ngFor="let accountColors of accountsColorsArray">
+          <mat-option [value]="accountColors.color">
+            <app-accounts-color-sample
+              #color
+              [accountColors]="accountColors"
+            ></app-accounts-color-sample>
+          </mat-option>
+        </ng-container>
       </mat-select>
     </mat-form-field>
     <mat-form-field

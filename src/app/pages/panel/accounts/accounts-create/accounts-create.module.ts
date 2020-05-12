@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 
 import { AccountsCreateComponent } from './accounts-create.component';
+import { AccountsColorSampleModule } from 'src/app/shared/components/accounts/accounts-color-sample/accounts-color-sample.module';
 
 const materialImports = [
   MatButtonModule,
@@ -21,6 +22,7 @@ const materialImports = [
 @NgModule({
   declarations: [AccountsCreateComponent],
   imports: [
+    AccountsColorSampleModule,
     CommonModule,
     FlexLayoutModule,
     materialImports,
