@@ -7,14 +7,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./accounts-create.component.scss'],
 })
 export class AccountsCreateComponent implements OnInit {
-  // TODO - alterar para a interface correta
-  accountsColorsArray: { backgroundColor: string; color: string }[] = [
-    { backgroundColor: 'white', color: 'black' },
-    { backgroundColor: 'rgb(138, 5, 190)', color: 'white' },
-    { backgroundColor: 'green', color: 'white' },
-    { backgroundColor: '#082872', color: 'white' },
-  ];
-
   createAccountForm: FormGroup;
 
   constructor(private readonly formBuilder: FormBuilder) {}

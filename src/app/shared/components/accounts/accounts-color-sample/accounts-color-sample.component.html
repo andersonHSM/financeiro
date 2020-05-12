@@ -1,1 +1,23 @@
-<div #colorBox class="color-box"></div>
+<div #colorBox class="color-box mat-elevation-z2">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span>Cor</span>
+        <span
+          class="circle selected-color"
+          [ngStyle]="{ 'background-color': selectedColor.backgroundColor }"
+        ></span>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-divider></mat-divider>
+    <div class="color-list">
+      <ng-container *ngFor="let colorObject of defaultColors">
+        <button
+          (click)="selectColor(colorObject)"
+          [ngStyle]="{ 'background-color': colorObject.backgroundColor }"
+          class="circle select-color"
+        ></button>
+      </ng-container>
+    </div>
+  </mat-expansion-panel>
+</div>

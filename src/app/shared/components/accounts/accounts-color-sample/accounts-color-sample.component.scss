@@ -2,8 +2,46 @@
   width: 100%;
 }
 
+mat-expansion-panel-header {
+  height: auto !important;
+}
+
+mat-expansion-panel {
+  background: transparent;
+  box-shadow: none !important;
+}
+
+mat-panel-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  height: 60px !important;
+}
+
 .color-box {
-  height: 25px;
+  height: fit-content;
   width: 100%;
-  padding: 2px 5px;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+}
+
+.select-color {
+  margin: 5px;
+}
+
+.color-list {
+  margin-top: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+button {
+  outline: none;
+  border: none;
 }

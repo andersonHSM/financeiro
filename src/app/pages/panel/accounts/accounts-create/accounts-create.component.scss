@@ -1,18 +1,32 @@
+.form-wrapper-gt-sm {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.form-wrapper-lt-md {
+  width: 90%;
+  margin: 0 auto;
+}
+
 .form-field-row-wrapper {
   width: 100%;
   max-width: 100%;
 }
 
 .form-field-gt-sm {
-  width: 25%;
+  width: 35%;
 }
 
 .form-field-flex-lt-md {
-  width: 75%;
+  width: 85%;
 }
 
 .color-box {
   height: 25px;
   width: 100%;
   padding: 2px 5px;
+}
+
+.page-wrapper {
+  padding: 30px 0;
 }
